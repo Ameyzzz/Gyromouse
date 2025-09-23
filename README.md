@@ -1,52 +1,37 @@
-# Gyromouse
-A glove-based gyroscopic mouse that redefines how we use computers. Using the ROLL (Rotation Oriented Link Layer) protocol with an ADXL335 accelerometer and four buttons for clicks and scrolling, it turns natural hand movements into precise cursor control in a wearable form.
+# GyroMouse ROLL (Rotation Oriented Link Layer)
 
-ROLL: Rotation Oriented Link Layer – Gyroscopic Mouse
+This project turns an Arduino + ADXL335 accelerometer into a fully functional computer mouse using Python.
 
-This project turns an ESP32-C3 (Seeed XIAO) and an ADXL335 accelerometer into a fully functional wireless motion-based mouse using the custom ROLL (Rotation Oriented Link Layer) protocol.
+## Features
+- Move cursor by tilting accelerometer
+- Left + Right click buttons
+- Scroll up and down with buttons
+- Python interface for OS cursor control
 
-##🚀 Features
-Real-time cursor movement based on accelerometer tilt (X/Y axis).
-Left & Right Click buttons.
-Scroll Up & Scroll Down buttons.
-Works with Python backend (pyautogui) to control the system cursor.
-Extensible to BLE HID in future updates.
+## Hardware Setup
+- Arduino UNO/Nano
+- ADXL335 accelerometer (X=A0, Y=A1)
+- 4 buttons for left, right, scroll up, scroll down
+- Buttons connected to pins D2–D5 with internal pull-ups
 
-##🛠️ Hardware Required
-Seeed Studio XIAO ESP32-C3
-ADXL335 (3-axis accelerometer)
-4 × Tactile push buttons (for clicks & scrolls)
-Breadboard + jumper wires
+## Usage
+1. Upload `arduino/gyromouse.ino` to Arduino.
+2. Install Python requirements:
+   ```bash
+   pip install pyautogui pyserial
+   ```
+3. Run `python/gyromouse.py` (update COM port if needed).
 
-##📌 Pinout Connections
-ADXL335 → ESP32-C3
-ADXL335 Pin	ESP32-C3 Pin
-VCC	3V3
-GND	GND
-X	D1 (GPIO2)
-Y	D2 (GPIO3)
-Z	D3 (GPIO4)
-Buttons → ESP32-C3
-Button	ESP32-C3 Pin
-Left Click	D4 (GPIO5)
-Right Click	D5 (GPIO6)
-Scroll Up	D6 (GPIO7)
-Scroll Down	D7 (GPIO21)
+## pinouts
+ADXL335 to esp32-c3 XIAO
+VCC → 3V3
+GND → GND
+X → D1
+Y → D2
+Z → D3
 
-Each button: one leg → pin, opposite leg → GND.
-
-##💻 Software
-Arduino IDE for ESP32-C3 firmware
-Python 3 + pyserial + pyautogui on host PC
-
-##📂 Repository Structure
-ROLL-Mouse/
-│── firmware/         # Arduino code for ESP32-C3
-│── python-client/    # Python script for cursor + clicks
-│── docs/             # Wiring diagrams, pinouts, notes
-│── README.md         # Project documentation
-
-##📈 Future Plans
-Upgrade to BLE HID for direct wireless mouse without Python bridge.
-Add motion smoothing & sensitivity settings.
-Integrate gesture-based controls.
+Buttons to esp32-c3 XIAO
+Button 1 (Left Click): One leg → D4, other → GND
+Button 2 (Right Click): One leg → D5, other → GND
+Button 3 (Scroll Up): One leg → D6, other → GND
+Button 4 (Scroll Down): One leg → D7, other → GND
