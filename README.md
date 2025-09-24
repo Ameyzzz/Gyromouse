@@ -12,13 +12,9 @@ Extensible to BLE HID in future updates.
 
 
 🛠️ Hardware Required
-
 Seeed Studio XIAO ESP32-C3
-
 ADXL335 (3-axis accelerometer)
-
 4 × Tactile push buttons (for clicks & scrolls)
-
 Breadboard + jumper wires
 
 
