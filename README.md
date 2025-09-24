@@ -1,4 +1,5 @@
 #ROLL: Rotation Oriented Link Layer – Gyroscopic Mouse
+
 This project turns an ESP32-C3 (Seeed XIAO) and an ADXL335 accelerometer into a fully functional wireless motion-based mouse using the custom ROLL (Rotation Oriented Link Layer) protocol.
 
 
@@ -11,9 +12,13 @@ Extensible to BLE HID in future updates.
 
 
 🛠️ Hardware Required
+
 Seeed Studio XIAO ESP32-C3
+
 ADXL335 (3-axis accelerometer)
+
 4 × Tactile push buttons (for clicks & scrolls)
+
 Breadboard + jumper wires
 
 
